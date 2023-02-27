@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <div id="maincontainer"></div>
+        <script>
+            //hearder
+            const header = document.createElement("div")
+            const headerH2 = document.createElement("h2")
+            headerH2.appendChild(document.createTextNode("Exercise 04: JavaScript&DOM"))
+            header.appendChild(headerH2)
+            document.getElementById("maincontainer").appendChild(header)
+
+            //button
+            let showDate = false
+            let curTime = new Date()
+            let colorCount = 0
+            let textColorCount = 2
+            const buttonColor = ["red","green","blue","#fefbd8","#d5f4e6","#FF007F"]
+            const button = document.createElement("button")
+            button.appendChild(document.createTextNode("Click me to display Date and Time"))
+            button.onclick = () =>{
+                showDate = !showDate
+                if (showDate){
+                    myWorker = new Worker("webWorker.js")
+                    button.style.position ="fixed"
+                    button.style.top = 0;
+                    button.style.right = 0;
+                    myWorker.onmessage=(e)=>{
+                        button.style.color = buttonColor[textColorCount++]
+                        button.style.backgroundColor = buttonColor[colorCount++]
+                        button.innerHTML = e.data
+                        if (colorCount >  5 ){
+                            colorCount = 0
+                        }
+                        if (textColorCount > 5){
+                            textColorCount = 0
+                        }
+                    }
+                }else{
+                    button.style.position = null;
+                    myWorker.terminate()
+                }
+            }
+            document.getElementById("maincontainer").appendChild(button)
+
+            //personal info
+            const css = "#personalInfo{text-decoration:underline; color:pink; cursor:pointer; width:fit-content;} #personalInfo:hover{color:blue; background-color:yellow; width:fit-content;}"
+            const style = document.createElement("style")
+            const personal = document.createElement("div")
+            const personalInfo = document.createElement("p")
+            const ul = document.createElement("ul")
+            const li1 = document.createElement("li")
+            const li2 = document.createElement("li")
+            const li3 = document.createElement("li")
+            li1.appendChild(document.createTextNode("Sirasit Thiancharoenchai, ID: 64010845"))
+            li2.appendChild(document.createTextNode("Subject: Web Application Development"))
+            li3.appendChild(document.createTextNode("Semester: 2"))
+            ul.appendChild(li1)
+            ul.appendChild(li2)
+            ul.appendChild(li3)
+            let showInfo = false
+            const personalInfoText = document.createTextNode("Personal Info")
+            personalInfo.appendChild(personalInfoText)
+            personalInfo.id = "personalInfo"
+            style.appendChild(document.createTextNode(css))
+            personalInfo.onclick=()=>{
+                showInfo = !showInfo
+                if (showInfo){
+                    personal.appendChild(ul)
+                }
+                else{
+                    personal.removeChild(ul)
+                }
+            }
+            personal.appendChild(style)
+            personal.appendChild(personalInfo)
+            document.getElementById("maincontainer").appendChild(personal)
+
+            //snapshots
+            const lst = [
+                {
+                    title : "Fireworks",
+                    img : "https://www.ontariosciencecentre.ca/media/2098/fireworksheader3.jpg"
+                },
+                {
+                    title:"Crest",
+                    img : "https://www.mycrest3d.com/wp-content/uploads/image/crest-professional-effects-2.jpg"
+                },
+                {
+                    title : "Action",
+                    img:"https://assets-prd.ignimgs.com/2022/05/31/fistful-of-vengeance-1654019622219.jpg"
+                },
+                {
+                    title: "Buffalo",
+                    img:"https://scontent.fbkk7-3.fna.fbcdn.net/v/t1.15752-9/330985216_3338005896487050_28948855114067347_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=ae9488&_nc_eui2=AeFb2JyVv1sM7rrFXda3sYgZk54xRFuNIUiTnjFEW40hSD_SI1cCmYB34YS1njszjCACpz0HBAbfI89vLscG35K4&_nc_ohc=B60Zwlp594gAX-ly-01&_nc_ht=scontent.fbkk7-3.fna&oh=03_AdQ_j0ScGQXeAqgY9lgyHbozj3mVniCUEUeEvNmha7ZIBQ&oe=641C1B13"
+                }
+            ]
+            const snapShots = document.createElement("div")
+            const ulSnap =document.createElement("ul")
+            const h1Snap = document.createElement("h1")
+            let img = document.createElement("img")
+            img.src="https://static.trueplookpanya.com/cmsblog/1873/73873/banner_file.jpg"
+            h1Snap.appendChild(document.createTextNode("Snapshots"))
+            lst.map(e =>{
+                const li = document.createElement("li")
+                const span = document.createElement("span")
+                span.appendChild(document.createTextNode(e.title))
+                span.style.textDecoration = "underline"
+                span.style.cursor = "pointer"
+                span.style.color = "blue"
+                li.style.width = "fit-content"
+                li.appendChild(span)
+                ulSnap.appendChild(li)
+                li.onclick=()=>{
+                    img.src = e.img
+                }
+            })
+            document.getElementById("maincontainer").appendChild(h1Snap)
+            document.getElementById("maincontainer").appendChild(ulSnap)
+            document.getElementById("maincontainer").appendChild(img)
+        </script>
+    </body>
+</html>

@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KMITF</title>
+  <link rel="icon" href="https://static.vecteezy.com/system/resources/previews/005/008/152/original/k-letter-logo-concept-creative-minimal-emblem-design-template-free-vector.jpg">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    .home {
+      min-height: 100vh;
+      color: #FF8000;
+      position: relative;
+      background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url('https://scontent.fbkk7-2.fna.fbcdn.net/v/t1.15752-9/242123237_709332243791066_5967584687318199701_n.png?_nc_cat=104&ccb=1-7&_nc_sid=ae9488&_nc_eui2=AeElBO2fecWcOi1pdPVNbJPkY_NmABpkNAdj82YAGmQ0B8-cxInPqPlND_t2qq0tGO1_cMXO9mXVhZMGMlw9-Mug&_nc_ohc=gDMMoiDvmV8AX_rTx57&tn=cI6dNRz5L64GmOEc&_nc_ht=scontent.fbkk7-2.fna&oh=03_AdR3IMAgSGybYeH6tl99JxO3nEj4-RPCUQcL5gKbZtwIiw&oe=6409BE61');
+      background-position: center;
+      background-size: cover;
+      /* margin-bottom: 30px; */
+    }
+
+    .home .content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      /* bring your own prefixes */
+      transform: translate(-50%, -50%);
+    }
+
+    .course {
+      text-align: center;
+      width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .row {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .course_card {
+      padding: 2rem;
+      height: fit-content;
+      background: #fffbf2;
+      text-align: center;
+      width: 30%;
+      
+    }
+
+    .campus{
+      margin: auto;
+      width: 90%;
+      text-align: center;
+    }
+
+    .campus_col {
+      flex-basis: 32%;
+      border-radius: 10px;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 30px;
+    }
+
+    .campus_col img{
+      width: 100%;
+    }
+
+    .layer{
+      background: transparent;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top:0;
+      left: 0;
+      transition: 0.5s;
+    }
+
+    .layer:hover{
+      background: rgba(226,0,0,0.7);
+    }
+
+    .layer h5{
+      color: #ffff;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      transition: 0.5s;
+    }
+
+    .layer:hover h5{
+      bottom: 49%;
+    }
+
+    .facilities{
+      width: 90%;
+      margin: auto;
+      text-align: center;
+    }
+
+    .facilities_col{
+      flex-basis: 32%;
+      border-radius: 10px;
+      text-align: left;
+      overflow: hidden;
+      margin-bottom: 30px;
+    }
+
+    .facilities_col img{
+      width: 100%;
+    }
+
+    .student_say{
+      width: 90%;
+      margin: auto;
+      text-align: center;
+    }
+
+    .comment{
+      text-align: left;
+      border-radius: 10px;
+      background: #f1ddcf;
+      position: relative;
+      padding: 25px;
+      display: flex;
+      flex-basis: 49%;
+      margin-bottom: 30px;
+    }
+
+    .comment img{
+      border-radius: 50%;
+      height: 60px;
+      margin-right: 20px;
+    }
+
+    .contact_us{
+      text-align: center;
+      width: 90%;
+      color: #FF8000;
+      margin: auto;
+      padding: 150px;
+      background-image:linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url('https://scontent.fbkk7-3.fna.fbcdn.net/v/t1.15752-9/248896850_899866644229208_6911265337922256118_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=ae9488&_nc_eui2=AeE5lOA9t9-QsvlLPrVHv8TS80hB7EM4RWjzSEHsQzhFaBx-JUZBlWRhE2B9YL-G1GRKO-FfSigds6yKNgy8UCk3&_nc_ohc=bVNweaam3-4AX9UT7EX&tn=cI6dNRz5L64GmOEc&_nc_ht=scontent.fbkk7-3.fna&oh=03_AdQ4FdqUvroHVUcmoRJD7EdUhhHYtLTZ_2Exmu_TYXnYnQ&oe=6409C23A');
+      background-position: center;
+      border-radius: 10px;
+      
+    }
+
+    .about_us{
+      text-align: center;
+      width: 90%;
+      margin: auto;
+      margin-bottom: 50px;
+    }
+
+    .go_back{
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: #FF8000;
+      text-align: center;
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      z-index: 10;
+      
+    }
+
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#" style="color: #FF8000;">KMITF</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#" >Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#COURSE">Course</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#CAMPUS">Campus</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#FACILITIES">Facilities</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#COMMENT">Comment</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#CONTACT">Contact Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#ABOUTUS">About US</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- GoBack -->
+  <div class="go_back">
+    <a href="#" style="text-decoration: none;"><h1 style="color: #ffff;">↑</h1></a>
+    
+  </div>
+  <!-- HOME -->
+  <div class="home" id="HOME">
+    <div class="content">
+      <h1>King Mongkut's Institute of Technology France</h1>
+      <center><button type="button" class="btn btn-outline-light">Let's Explore!!!</button></center>
+    </div>
+  </div>
+
+  <!-- course -->
+  <div id="COURSE" style="margin-bottom: 50px;"></div>
+  <div class="course">
+    <div>
+      <h1>Courses We Offer</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, earum.</p>
+    </div>
+    <div class="d-flex gap-5 flex-lg-row flex-column">
+      <div class="course_card w-lg-25 w-100">
+        <h2>Intermediate</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis maiores quisquam accusamus dolore quis
+          ipsum error corrupti, cum blanditiis? Libero alias totam facilis illo, eum omnis eligendi reiciendis! Neque,
+          possimus!</p>
+      </div>
+      <div class="course_card w-lg-25 w-100">
+        <h2>Degree</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis maiores quisquam accusamus dolore quis
+          ipsum error corrupti, cum blanditiis? Libero alias totam facilis illo, eum omnis eligendi reiciendis! Neque,
+          possimus!</p>
+      </div>
+      <div class="course_card w-lg-25 w-100">
+        <h2>Post Graduation</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis maiores quisquam accusamus dolore quis
+          ipsum error corrupti, cum blanditiis? Libero alias totam facilis illo, eum omnis eligendi reiciendis! Neque,
+          possimus!</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- campus -->
+  <div id="CAMPUS" style="margin-bottom: 50px;"></div>
+  <div class="campus">
+      <h5>Our Global Campus</h5>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, amet!</p>
+      <div class=" justify-content-between d-lg-flex">
+        <div class="campus_col ">
+          <img src="https://scontent.fbkk7-3.fna.fbcdn.net/v/t1.15752-9/246729143_431528871699211_1799741280104310222_n.png?_nc_cat=101&ccb=1-7&_nc_sid=ae9488&_nc_eui2=AeGQGmwFbsEiyB3PIb36OXn7X48jWXt4jN5fjyNZe3iM3qc_GZDT_RmvkPXfDzRhA8y_wkGpwtpM9MgKDtJ0uJ6T&_nc_ohc=qkRtmnEe1zYAX-btIaV&_nc_ht=scontent.fbkk7-3.fna&oh=03_AdSCu0_GppibeTO9UZ6hJ3GAeBfJBDPnqp4q2czQ2DqXCQ&oe=6409E688" alt="">
+          <div class="layer"><h5>LONDON</h5></div>
+        </div>
+        <div class="campus_col ">
+          <img src="https://scontent.fbkk7-3.fna.fbcdn.net/v/t1.15752-9/248957225_617030906145878_7157046212753716954_n.png?_nc_cat=108&ccb=1-7&_nc_sid=ae9488&_nc_eui2=AeHUbwpW6AL8yrPyiNiD407jwIOwrjprbF7Ag7CuOmtsXqfOtDOacpl9r8gyKuwU0TnhpgMbEXLUj5foAHOmWocj&_nc_ohc=ViwiuBy_spoAX956yDY&_nc_ht=scontent.fbkk7-3.fna&oh=03_AdTsG2er1nopP2sucXkfEhQrr7VwKu-RKNNQABS5LHUBUg&oe=6409B789" alt="">
+          <div class="layer"><h5>NEW YORK</h5></div>
+        </div>
+        <div class="campus_col ">
+          <img src="https://scontent.fbkk7-3.fna.fbcdn.net/v/t1.15752-9/249196513_233037658891952_1423554678875586823_n.png?_nc_cat=109&ccb=1-7&_nc_sid=ae9488&_nc_eui2=AeGyqHfCxg6HnGInyRSjFjOxbve4xxb6eQdu97jHFvp5B-tpMscZazvQrfjCTYWTOfxlk_lrtJ2YJhC7mzBbJVwR&_nc_ohc=dNCS0TNZ4RIAX_VDJy7&tn=cI6dNRz5L64GmOEc&_nc_ht=scontent.fbkk7-3.fna&oh=03_AdR80fn52Tp2JhXZJxmOPhAchDCLsnO8Tsp8mfcxgz3f1Q&oe=6409CA1E" alt="">
+          <div class="layer"><h5>WASHINGTON</h5></div>
+        </div>
+      </div>
+  </div>
+
+  <!-- facilities -->
+  <div id="FACILITIES" style="margin-bottom: 50px;"></div>
+  <div class="facilities">
+    <h1>Our Facilities</h1>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus, perspiciatis!</p>
+    <div class=" justify-content-between d-lg-flex">
+      <div class="facilities_col ">
+        <img src="https://scontent.fbkk7-3.fna.fbcdn.net/v/t1.15752-9/248826602_462878155167764_5467631055715636336_n.png?_nc_cat=103&ccb=1-7&_nc_sid=ae9488&_nc_eui2=AeEYt47-Wo-pqCJPFX1werY0Lx_-oX-ALHEvH_6hf4AscYIpWnWFAJncIyn-JehV4v1Mrqyc5qHCylW7tZBp16j0&_nc_ohc=JIluN2t_eLoAX_yIcI-&tn=cI6dNRz5L64GmOEc&_nc_ht=scontent.fbkk7-3.fna&oh=03_AdTP_aWzUPTYgkXsJzbFbUYhYtmtwt4-VzdhEJtUSzTi_Q&oe=6409EA14" alt="">
+        <h3>World Class Library</h3>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi cumque, quae cum voluptatem veritatis incidunt!</p>
+      </div>
+      <div class="facilities_col ">
+        <img src="https://scontent.fbkk7-2.fna.fbcdn.net/v/t1.15752-9/248054793_1203394673397362_7729249718581587081_n.png?_nc_cat=111&ccb=1-7&_nc_sid=ae9488&_nc_eui2=AeEAJKpWs4ozzvWImg-hYWWdx_yvIECmbyHH_K8gQKZvIeGMgz0lJreyy3ZBqRUE3qbEWQ7WI5OQK1BmRh5rYxwu&_nc_ohc=_UTygw-Ccb8AX8ypqeZ&_nc_ht=scontent.fbkk7-2.fna&oh=03_AdSwSjhw6T7Jd5Fqrptmk5jTqx7sbS5O0EXTiHkmjE2PzA&oe=6409D914" alt="">
+        <h3>Largest Play Ground</h3>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi cumque, quae cum voluptatem veritatis incidunt!</p>
+      </div>
+      <div class="facilities_col">
+        <img src="https://scontent.fbkk7-3.fna.fbcdn.net/v/t1.15752-9/248783768_1008245816398666_4256839241285451772_n.png?_nc_cat=100&ccb=1-7&_nc_sid=ae9488&_nc_eui2=AeEH-4s6rt0sPfHFJEiMC-6q5GFots4p4cDkYWi2zinhwN39wcCZbdvYOOgTUVA-pc7z4Vl1B7UPlp-sqUAst2HA&_nc_ohc=eblFgML4MVYAX__QQ_4&_nc_ht=scontent.fbkk7-3.fna&oh=03_AdTR8Or0OSwPNasOk5p7uc63xpr4sc9S3Dhl_JNGcDA4bg&oe=6409D0B5" alt="">
+        <h3>Tasty and Healthy Food</h3>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi cumque, quae cum voluptatem veritatis incidunt!</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- what our student say -->
+  <div id="COMMENT" style="margin-bottom: 50px;"></div>
+  <div class="student_say">
+    <h1>What Our Student Says</h1>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequatur, quam.</p>
+    <div class="justify-content-between d-lg-flex">
+      <div class="comment">
+        <img src="https://scontent.fbkk7-2.fna.fbcdn.net/v/t1.15752-9/249045686_216366810473867_8581960718790613216_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=ae9488&_nc_eui2=AeGamTlpqgvr0aHLL9Sn3L7Ia6W5hU8ME61rpbmFTwwTra00o_-hu0CUh_zqhsRNaq3XuEJtoa_KZRMwhoOR_t5g&_nc_ohc=zSZoNEsZR_UAX8DIsBY&_nc_ht=scontent.fbkk7-2.fna&oh=03_AdQoGfgDqg48huSBOHazXwYZZ5fJhfflEbnhM-bpbgoKlg&oe=6409DE3F" alt="">
+        <div>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi magni nam ipsam architecto. Asperiores aut ratione sequi ullam quis iure.</p>
+          <h3>Christine Barkley</h3>
+        </div>
+      </div>
+      <div class="comment">
+        <img src="https://scontent.fbkk7-3.fna.fbcdn.net/v/t1.15752-9/248892760_357893526111468_3129973865286147507_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=ae9488&_nc_eui2=AeEWx3ej5CT7Ru2rilAB7J7jJ5kSuxMbauQnmRK7Extq5GlgeO-meRViCSSqzGnaJwKZ1WiRvbNzxKI-p6dh7qcT&_nc_ohc=j67_Fglx0GQAX-a4Yj6&_nc_ht=scontent.fbkk7-3.fna&oh=03_AdTk9jViXViRp1OT9fxZwMLdqTXzitJJSqyrZz_W9l-XfQ&oe=6409D8E3" alt="">
+        <div>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi magni nam ipsam architecto. Asperiores aut ratione sequi ullam quis iure.</p>
+          <h3>David Ayer</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- contact-us -->
+  <div id="CONTACT" style="margin-bottom: 50px;"></div>
+  <div class="contact_us">
+    <h2>Enroll For Our Various Online Course <br>Anywhere From The World</h2>
+    <button type="button" class="btn btn-outline-light">Contact Us</button>
+  </div>
+
+  <!-- about-us -->
+  <div id="ABOUTUS" style="margin-bottom: 50px;"></div>
+  <div class="about_us">
+    <h1>About Us</h1>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim suscipit iure expedita ex eos officiis aliquid minima dolore. In, quasi!</p>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+</body>
+</html>
